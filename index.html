@@ -61,25 +61,24 @@ I highly recommend you learn more about Canada's national parks, such as my favo
 <td>Lilacs
 </tr>
 
+<div style="margin-left: auto; margin-right: auto; margin-top: 50px;
+padding: 20px; width: 800px; font-size: 18px; font-family: cursive;">
+Chat-Bot7
 
-    <div style="margin-left: auto; margin-right: auto; margin-top: 50px;
-    padding: 20px; width: 800px; font-size: 18px; font-family: cursive;">
-    Chat-Bot7
-   
-   <div style=" margin-top:7px; padding: 25px; background-color: #ca9a62;
-   border: 4px solid #af811e; border-radius: 25px;">
-
-
-    <form name="chatForm">
-        <p id="botSays">What is your name ? </p>
-        <br>        
-        <input type="text" name="userInput" >
-        <input type="button" value="Send" onClick="displayFeedback(this.form)">
+<div style=" margin-top:7px; padding: 25px; background-color: #95cb9a;
+border: 4px solid #af811e; border-radius: 25px;">
 
 
-    </form>
-   </div>
-   </div>  
+<form name="chatForm">
+	<p id="botSays">What is your name ? </p>
+	<br>        
+	<input type="text" name="userInput" >
+	<input type="button" value="Send" onClick="displayFeedback(this.form)">
+
+
+</form>
+</div>
+</div>  
 
 
 <script>
@@ -99,78 +98,78 @@ var favArtistsList=["beyonce", "britney spears", "rihanna", "lady gaga"]
 var userName;
 
 
-    function displayFeedback(form) {
-        counter++;
+function displayFeedback(form) {
+	counter++;
 
 
-        var feedbackText="";
-        var newQuestionText="";
+	var feedbackText="";
+	var newQuestionText="";
 
 
-        var userInput= form.userInput.value;
+	var userInput= form.userInput.value;
 
 
-        if (counter==1) {        
-            userName= userInput;
-            feedbackText="Hello, "+ userName+" ! " +"<br>Nice to meet you."+
-            " I am ChatBot7, a junior at Mount Holyoke College.";
+	if (counter==1) {        
+		userName= userInput;
+		feedbackText="Hello, "+ userName+" ! " +"<br>Nice to meet you."+
+		" I am ChatBot7, a junior at Mount Holyoke College.";
 
 
-            newQuestionText="Do you also attend Mount Holyoke College ?";              
-        }
+		newQuestionText="Do you also attend Mount Holyoke College ?";              
+	}
 
 
-        if (counter==2) {        
-            feedbackText="Thanks for sharing.";
-            newQuestionText="What is your favorite color?";          
-        }
+	if (counter==2) {        
+		feedbackText="Thanks for sharing.";
+		newQuestionText="What is your favorite color?";          
+	}
 
 
-        if (counter==3) {        
-            feedbackText="That is a beautiful color! My favorite color is orange or red.";
-            newQuestionText="What are you majoring in, or what are you thinking about studying?";              
-        }
+	if (counter==3) {        
+		feedbackText="That is a beautiful color! My favorite color is orange or red.";
+		newQuestionText="What are you majoring in, or what are you thinking about studying?";              
+	}
 
-        if (counter==4) {
+	if (counter==4) {
 
-            //we are converting the userinput into lowercase for comparison     
-            if (userInput.toLowerCase()== myMajor) feedbackText="Nice! I am also majoring in "+ userInput+"."; 
-            
-            else {
-                feedbackText=userInput+" sounds very interesting."+" I am majoring in "+myMajor;
-                
-                //check if user's major is one the majors in your majorInterestedList 
-                for (let i = 0; i < majorInterestedList.length; i++) {      
-                    if (userInput.toLowerCase() == majorInterestedList[i]) {
-                        feedbackText="I've always been interested in " +userInput+", and almost majored in it. I am now majoring in "+myMajor+".";
-                    }    
-                }
-        }
-    
-        newQuestionText="What is one of your favorite music artists?"; 
-        }
-            
-        if (counter==5) {
+		//we are converting the userinput into lowercase for comparison     
+		if (userInput.toLowerCase()== myMajor) feedbackText="Nice! I am also majoring in "+ userInput+"."; 
+		
+		else {
+			feedbackText=userInput+" sounds very interesting."+" I am majoring in "+myMajor;
+			
+			//check if user's major is one the majors in your majorInterestedList 
+			for (let i = 0; i < majorInterestedList.length; i++) {      
+				if (userInput.toLowerCase() == majorInterestedList[i]) {
+					feedbackText="I've always been interested in " +userInput+", and almost majored in it. I am now majoring in "+myMajor+".";
+				}    
+			}
+	}
 
-            //we are converting the userinput into lowercase for comparison     
-            if (userInput.toLowerCase()== favArtist) feedbackText="They are also my favorite artist!"; 
-            
-            else {
-                feedbackText="I've heard good things about "+userInput+", they must be pretty good.";
-                
-                //check if user's major is one the majors in your majorInterestedList 
-                for (let i = 0; i < majorInterestedList.length; i++) {      
-                    if (userInput.toLowerCase() == majorInterestedList[i]) {
-                        feedbackText=userInput+" is also one of my favorie artists!";
-                    }    
-                }
-        }
-    
-        newQuestionText=""; 
-        }
-        document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
-        form.userInput.value=""; 
-    }
+	newQuestionText="What is one of your favorite music artists?"; 
+	}
+		
+	if (counter==5) {
+
+		//we are converting the userinput into lowercase for comparison     
+		if (userInput.toLowerCase()== favArtist) feedbackText="They are also my favorite artist!"; 
+		
+		else {
+			feedbackText="I've heard good things about "+userInput+", they must be pretty good.";
+			
+			//check if user's major is one the majors in your majorInterestedList 
+			for (let i = 0; i < majorInterestedList.length; i++) {      
+				if (userInput.toLowerCase() == majorInterestedList[i]) {
+					feedbackText=userInput+" is also one of my favorie artists!";
+				}    
+			}
+	}
+
+	newQuestionText=""; 
+	}
+	document.getElementById("botSays").innerHTML = feedbackText+ "<br><br>"+newQuestionText;   
+	form.userInput.value=""; 
+}
 </script>
 
 </body>
